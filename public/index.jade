@@ -1,20 +1,60 @@
 extends ./layout.jade
 
-block title
-	title Главная страница
-
 block links
 	//- link(rel="stylesheet", href="assets/plugins/bootstrap/less/bootstrap.css")
 	//- link(rel="stylesheet", href="assets/plugins/fuelux/less/fuelux.css")
 	//- link(rel="stylesheet", href="assets/plugins/magnific-popup/dist/magnific-popup.css")
-	//- link(rel="stylesheet", href="assets/plugins/slick-carousel/slick/slick.css")
+	link(rel="stylesheet", href="assets/plugins/slick-carousel/slick/slick.css")
 	//- script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU")
-	//- script(src="assets/plugins/slick-carousel/slick/slick.min.js")
+	script(src="assets/plugins/slick-carousel/slick/slick.min.js")
 	//- script(src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js")
 	//- script(src="assets/plugins/bootstrap/js/tab.js")
 	//- script(src="assets/plugins/fuelux/js/radio.js")
 	//- script(src="assets/js/yandex.js")
+	script(src="assets/js/carousel.js")
 
 
 block content
-	p hello, world!
+	.carousel-headers
+		h2 Верстка
+		h2 Мобильные приложения
+		h2 Сайты
+
+	// ======================
+	// ?works
+	// ======================
+	
+	.carousel
+		.works.clearfix
+			mixin item-name(img, link, name)
+				.col-xs-12.col-sm-6.col-md-4.col-lg-3.works__col
+					a(href=link, target="_blank").works__item
+						.works__img
+							img(src="assets/img/logos/#{img}.png", alt="")
+							.works__img-shiv
+						.works__name= name
+			mixin item(img, link)
+				.col-xs-12.col-sm-6.col-md-4.col-lg-3.works__col
+					a(href=link, target="_blank").works__item
+						.works__img
+							img(src="assets/img/logos/#{img}.png", alt="")
+							.works__img-shiv
+			+item('spk','https://dl.wmcrm.ru/spk/www/index.html')
+			+item('compress','https://dl.wmcrm.ru/compress/index.html')
+			+item('billing','https://dl.wmcrm.ru/rc-online/index.html')
+			+item-name('smu','https://dl.wmcrm.ru/smu/index.html','Строительная компания СМУ3')
+			+item-name('vysoko','http://vysoko.wmcrm.ru/','Высоцкий')
+			+item-name('lounge','https://dl.wmcrm.ru/lounge/index.html','Ресторан “Антарес Лаунж”')
+			+item('ugmk','http://ummc.wmcrm.ru')
+			+item-name('ekapay','/works/makeup/ekapay/index.html','Електронные деньги')
+			+item('bierhof','http://bierhof.bar/')
+
+		.works.clearfix
+			+item-name('cordova','https://www.dropbox.com/s/epz34sv2p21tvo9/Geotechnicalmonitoring-debug.apk?dl=0','Мониторинг строительных конструкций')
+	
+		.works.clearfix
+			+item-name('vesprom','http://xn--b1agvhegf.xn--p1ai/','ВесПром - промышленные весы')
+
+	// ======================
+	// ?works end
+	// ======================

@@ -2,19 +2,41 @@
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		meta(name="viewport", content="width=1024")
+		meta(name="author" content="NovaView")
+		meta(name="description" content="НоваВью - это современная веб студия, специализирующаяся на создании сайтов и разрабтке цифрового дизайна. Мы предлагаем широкий спектр услуг в сфере интернет сайтов и цифрового дизайна")
+		meta(name="keywords" content="Novaview, Дизайн сайта,Создание сайта, Детальная проработка,Разработка сайта, веб дизайн, создание сайта екатеринбург, создание сайта цена, продвижение сайта, создание и продвижение сайта,графический дизайн, дизайнерская вебстудия")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		block title
-			title Страница
-		//- link(href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700|Roboto:400,300,300italic,400italic,500,500italic,700&subset=all',rel='stylesheet',type='text/css')
-		//- link(rel="stylesheet", href="assets/plugins/bootstrap/less/bootstrap.css")
+			title NovaView
+		link(rel="apple-touch-icon", sizes="57x57", href="assets/img/favicons/apple-touch-icon-57x57.png")
+		link(rel="apple-touch-icon", sizes="60x60", href="assets/img/favicons/apple-touch-icon-60x60.png")
+		link(rel="apple-touch-icon", sizes="72x72", href="assets/img/favicons/apple-touch-icon-72x72.png")
+		link(rel="apple-touch-icon", sizes="76x76", href="assets/img/favicons/apple-touch-icon-76x76.png")
+		link(rel="apple-touch-icon", sizes="114x114", href="assets/img/favicons/apple-touch-icon-114x114.png")
+		link(rel="apple-touch-icon", sizes="120x120", href="assets/img/favicons/apple-touch-icon-120x120.png")
+		link(rel="apple-touch-icon", sizes="144x144", href="assets/img/favicons/apple-touch-icon-144x144.png")
+		link(rel="apple-touch-icon", sizes="152x152", href="assets/img/favicons/apple-touch-icon-152x152.png")
+		link(rel="apple-touch-icon", sizes="180x180", href="assets/img/favicons/apple-touch-icon-180x180.png")
+		link(rel="icon", type="image/png", href="assets/img/favicons/favicon-32x32.png", sizes="32x32")
+		link(rel="icon", type="image/png", href="assets/img/favicons/android-chrome-192x192.png", sizes="192x192")
+		link(rel="icon", type="image/png", href="assets/img/favicons/favicon-96x96.png", sizes="96x96")
+		link(rel="icon", type="image/png", href="assets/img/favicons/favicon-16x16.png", sizes="16x16")
+		link(rel="manifest", href="assets/img/favicons/manifest.json")
+		link(rel="shortcut icon", href="/favicon.ico")
+		meta(name="msapplication-TileColor", content="#ffffff")
+		meta(name="msapplication-TileImage", content="assets/img/favicons/mstile-144x144.png")
+		meta(name="msapplication-config", content="assets/img/favicons/browserconfig.xml")
+		meta(name="theme-color", content="#ffffff")
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css')
+		link(rel="stylesheet", href="assets/plugins/bootstrap/less/bootstrap.css")
 		//- link(rel="stylesheet", href="assets/plugins/fuelux/less/fuelux.css")
 		//- link(rel="stylesheet", href="assets/plugins/magnific-popup/dist/magnific-popup.css")
-		//- link(rel="stylesheet", href="assets/plugins/slick-carousel/slick/slick.css")
+		link(rel="stylesheet", href="assets/plugins/slick-carousel/slick/slick.css")
 		link(rel="stylesheet", href="assets/css/main.css")
 		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 		script.
 			window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.1.min.js"><\/script>')	
-		//- script(src="assets/js/vendor/modernizr-2.6.2.min.js")
+		script(src="assets/js/vendor/modernizr-2.6.2.min.js")
 		//- script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU")
 		//- script(src="assets/plugins/slick-carousel/slick/slick.min.js")
 		//- script(src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js")
@@ -38,18 +60,22 @@ html(lang="en")
 		.page
 			// HEAD BEGIN
 			header
-				.main
+				.container
+					a(href="#").logo
+						img(src="assets/img/logo-svg.svg", data-no-svg="assets/img/logo.png" alt="")
 			// HEAD END
 			// MAIN BEGIN
 			.section
-				.full-width
-				.main
+				.container
 					block content
 			// MAIN END
 			.footer-shiv
 		// FOOTER BEGIN
 		footer
-			.main
+			.container
+				.sign © NovaView
+					br
+					| Екатеринбург
 		// FOOTER END
 
 		

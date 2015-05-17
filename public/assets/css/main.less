@@ -1,6 +1,5 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 @import url('../_less/base.less');
-@import url('../_less/fonts.less');
 
 @footer-height: 100px;
 @content-width: 960px;
@@ -8,13 +7,12 @@ html, body {
 	height: 100%;
 }
 body {
-	font:16px 'Roboto',Arial, sans-serif;
 	position: relative;
-	line-height: 1.42;
-	-webkit-font-smoothing: antialiased;
+	font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
+	font-weight: 300;
+	text-align: center;	
 }
 p {
 	margin-bottom: 20px;
@@ -24,23 +22,194 @@ a {
 }
 .page {
 	min-height: 100%;
-	margin-bottom: -@footer-height;
-}
-header, .section, footer {
-	min-width: @content-width;
+	margin-bottom: -(@footer-height - 5);
 }
 footer, .footer-shiv {
 	clear: both;
 	height: @footer-height;
 }
-.main {
-	width: @content-width;
-	margin: 0 auto;
-	.clearfix;
-}
 .content {
 	.clearfix;
 }
+// ======================
+// ?header
+// ======================
 
+header {
+	position: relative;
+	height: 100px;
+	border-bottom: 1px solid #e6e6e6;
+	background: #fff;
+	.bxsh(0 3px 12px #eee);
+}
+
+.logo {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	.img-c(67px);
+	line-height: 65px;
+	margin-left: -33px;
+	margin-top: -33px;
+	transition: -webkit-filter .174s;
+	&:hover {
+		-webkit-filter: brightness(1.2);
+	}
+}
+
+// ======================
+// ?header end
+// ======================
+
+// ======================
+// ?footer
+// ======================
+
+footer {
+	border-top: 1px solid #e6e6e6;
+	font-size: 15px;
+}
+.sign {
+	margin-top: 28px;
+	margin-left: 15px;
+}
+
+// ======================
+// ?footer end
+// ======================
+
+// ======================
+// ?works >>>
+// ======================
+
+.padding(@size){
+	top: @size;
+	bottom: @size;
+	left: @size;
+	right: @size;
+}
+.works {
+	margin: 15px 0;
+	&__col {
+		padding: 15px;
+	}
+	&__item {
+		position: relative;
+		width: 100%;
+		padding-bottom: 100%;
+		border: 1px solid #e6e6e6;
+		box-shadow: 0 2px 10px #DDDDDD;
+		background: #fff;
+		.bdrs(8px);
+		margin: 0 auto;
+		display: block;
+		transition: box-shadow .174s;
+		&:hover {
+			box-shadow: 0 4px 13px #D7D7D7;
+		}
+	}
+	&__img {
+		.padding(15px);
+		position: absolute;
+	    text-align: center;
+	    font-size: 0;
+	    overflow: hidden;
+	    img {max-width: 100%;vertical-align: middle;}
+	    &-shiv {
+	    	display: inline-block;
+	    	vertical-align: middle;
+	    	height: 100%;
+	    	width: 0;
+	    }
+	}
+	&__name {
+		display: block;
+		position: absolute;
+		text-align: center;
+		font-size: 16px;
+		padding: 10px 0;
+		border-top: 1px solid #e6e6e6;
+		background: #fff;
+		left: 15px;
+		right: 15px;
+		color: #939393;
+		bottom: 0;
+	}
+}
+
+// ======================
+// ?works END <<<
+// ======================
+
+// ======================
+// ?carousel >>>
+// ======================
+
+.carousel-headers {
+	h2 {
+		min-height: 34px;
+		background: #fff;
+	}
+}
+
+.carousel {
+	.slick-dots {
+		position: absolute;
+		top: 5px;
+		height: 12px;
+		width: 100px;
+		margin-left: -50px;
+		left: 50%;
+		font-size: 0;
+		text-align: center;
+		li {
+			display: inline-block;
+			margin-left: 5px; 
+			&:first-child {margin-left: 0; }
+			&.slick-active button {
+				background: #ababab;
+			}
+		}
+		button {
+			width: 12px;
+			height: 12px;
+			display: block;
+			border-radius: 6px;
+			background: none;
+			border: 1px solid #ababab;
+			.bxsh(0 1px 1px #ddd);
+			cursor: pointer;
+		}
+	}
+}
+
+// ======================
+// ?carousel END <<<
+// ======================
+
+.arrow-r, .arrow-l {
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	margin-top: -9px;
+	background-image: url(../img/arrow-l.svg);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	width: 20px;
+	height: 38px;
+	cursor: pointer;
+}
+.arrow-r {
+	left: auto;
+	right: 15px;
+	background-image: url(../img/arrow-r.svg);
+}
+.no-svg .arrow-r {
+	background-image: url(../img/arrow-r.png);
+}
+.no-svg .arrow-l {
+	background-image: url(../img/arrow-l.png);
+}
 //==================================
 @import url('../_less/helper.less');

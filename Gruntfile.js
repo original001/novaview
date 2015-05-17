@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         },
         autoprefixer: {
             options: {
-                browsers: ['last 2 versions', 'ie 8', 'ie 9'],
+                browsers: ['> 0%'],
                 map: true
             },
             main: {
@@ -118,6 +118,9 @@ module.exports = function(grunt) {
             }
         },
         coffee: {
+            options: {
+                bare:false
+            },
             scripts: {
                 expand: true,
                 flatten: true,
