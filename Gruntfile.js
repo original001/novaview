@@ -136,6 +136,14 @@ module.exports = function(grunt) {
                     cwd: srcRoot + path,
                     src: ['**/*','!**/*.{less,coffee,ttf}','!**/_*','!**/.*'],
                     dest: destRoot + path
+                }],
+            },
+            works: {
+                files: [{
+                    expand: true,
+                    cwd: srcRoot,
+                    src: ['works/**/*'],
+                    dest: destRoot 
                 }]
             }
         },

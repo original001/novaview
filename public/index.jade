@@ -11,39 +11,32 @@ block content
 	.carousel-headers
 		h2 Верстка
 		h2 Приложения
-
-	// ======================
-	// ?works
-	// ======================
 	
 	.carousel
 		.works.clearfix
-			mixin item-name(img, link, name)
+			mixin item(img, link, name, icon)
 				.col-xs-12.col-sm-6.col-md-4.col-lg-3.works__col
 					a(href=link, target="_blank").works__item
 						.works__img
-							img(src="assets/img/logos/#{img}.png", alt="")
+							img(src="assets/img/logos/#{img}.jpg", alt="")
 							.works__img-shiv
-						.works__name= name
-			mixin item(img, link)
-				.col-xs-12.col-sm-6.col-md-4.col-lg-3.works__col
-					a(href=link, target="_blank").works__item
-						.works__img
-							img(src="assets/img/logos/#{img}.png", alt="")
-							.works__img-shiv
-			+item('spk','https://dl.wmcrm.ru/spk/www/index.html')
+						if name
+							.works__name= name
+						.works__icon
+							if icon
+								i.fa(class="fa-#{icon}")
+							else
+								i.fa.fa-external-link
+			+item('spk','https://dl.wmcrm.ru/spk/www/index.html', 'производитель кровельных и фасадных материалов')
 			+item('compress','https://dl.wmcrm.ru/compress/index.html')
 			+item('billing','https://dl.wmcrm.ru/rc-online/index.html')
-			+item-name('smu','https://dl.wmcrm.ru/smu/index.html','Строительная компания СМУ3')
-			+item-name('vysoko','http://vysoko.wmcrm.ru/','Высоцкий')
-			+item-name('lounge','https://dl.wmcrm.ru/lounge/index.html','Ресторан “Антарес Лаунж”')
+			+item('smu','https://dl.wmcrm.ru/smu/index.html','Строительная компания СМУ3')
+			+item('vysoko','http://vysoko.wmcrm.ru/','Высоцкий')
+			+item('lounge','https://dl.wmcrm.ru/lounge/index.html','Ресторан “Антарес Лаунж”')
 			+item('ugmk','http://ummc.wmcrm.ru')
-			+item-name('ekapay','/works/makeup/ekapay/index.html','Електронные деньги')
+			+item('ekapay','/works/ekapay/index.html','Електронные деньги')
 			+item('bierhof','http://bierhof.bar/')
 
 		.works.clearfix
-			+item-name('cordova','https://www.dropbox.com/s/epz34sv2p21tvo9/Geotechnicalmonitoring-debug.apk?dl=0','Мониторинг строительных конструкций')
-
-	// ======================
-	// ?works end
-	// ======================
+			+item('cordova','https://youtu.be/j3LzN6SwnxI','Мониторинг конструкций', 'youtube-play')
+			+item('matrix','/works/matrix/index.html','расчет матриц онлайн')
