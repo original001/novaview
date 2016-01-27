@@ -3,8 +3,6 @@ html(lang="en")
 	head
 		meta(charset="UTF-8")
 		meta(name="author" content="NovaView")
-		meta(name="description" content="НоваВью - это современная веб студия, специализирующаяся на создании сайтов и разрабтке цифрового дизайна. Мы предлагаем широкий спектр услуг в сфере интернет сайтов и цифрового дизайна")
-		meta(name="keywords" content="Novaview, Дизайн сайта,Создание сайта, Детальная проработка,Разработка сайта, веб дизайн, создание сайта екатеринбург, создание сайта цена, продвижение сайта, создание и продвижение сайта,графический дизайн, дизайнерская вебстудия")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		block title
 			title NovaView
@@ -33,26 +31,13 @@ html(lang="en")
 		//- link(rel="stylesheet", href="assets/plugins/magnific-popup/dist/magnific-popup.css")
 		link(rel="stylesheet", href="assets/plugins/slick-carousel/slick/slick.css")
 		link(rel="stylesheet", href="assets/css/main.css")
+		block css
+
 		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 		script.
-			window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.1.min.js"><\/script>')	
-		script(src="assets/js/vendor/modernizr-2.6.2.min.js")
-		//- script(src="//api-maps.yandex.ru/2.1/?lang=ru_RU")
-		//- script(src="assets/plugins/slick-carousel/slick/slick.min.js")
-		//- script(src="assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js")
-		//- script(src="assets/plugins/bootstrap/js/tab.js")
-		//- script(src="assets/plugins/fuelux/js/radio.js")
-		//- script(src="assets/js/yandex.js")
-		script(src="assets/js/main.js")
-		<!--[if IE]>
+		<!--[if (gte IE 6)&(lte IE 8)]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<!--[if (gte IE 6)&(lte IE 8)]>
-		<![endif]-->
-		// ==============
-		// addition links
-		// ==============
-		block links
 	body
 		<!--[if lt IE 8]>
 		<p class="browsehappy">Вы используете <strong>устаревшую</strong> версию браузера. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a> до последней версии.</p>
@@ -77,5 +62,7 @@ html(lang="en")
 					br
 					| Екатеринбург
 		// FOOTER END
-
+		script(src="assets/js/vendor/modernizr-2.6.2.min.js")
+		script(src="assets/js/main.js")
+		block js
 		

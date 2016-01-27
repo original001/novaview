@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         },
         autoprefixer: {
             options: {
-                browsers: ['> 0%'],
+                browsers: ['last 2 versions', 'ie 8', 'ie 9'],
                 map: true
             },
             main: {
@@ -119,11 +119,10 @@ module.exports = function(grunt) {
         },
         coffee: {
             options: {
-                bare:false
+                bare: true
             },
             scripts: {
                 expand: true,
-                flatten: true,
                 cwd: srcRoot + path + 'js/',
                 src: ['*.coffee'],
                 dest: destRoot + path + 'js/',
@@ -135,47 +134,8 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: srcRoot + path,
-                    src: ['**/*.min.js', 'css/*.htc', '!**/_*', 'css/*.css','fonts/webfonts/*', '!fonts/webfonts/*.css', 'js/*.js', '!plugins/**/*'],
+                    src: ['**/*','!**/*.{less,coffee,ttf}','!**/_*','!**/.*'],
                     dest: destRoot + path
-                }]
-            },
-            plugins: {
-                files: [{
-                    expand: true,
-                    cwd: srcRoot + path + 'plugins/',
-                    src: [
-                        '**/*.css',
-                        '**/*.min.js',
-                        '!jquery/**/*',
-                        '!bootstrap/dist/**/*',
-                        '!fuelux/dist/**/*',
-                        '!**/_*',
-                        // '**/*.gif',
-                        // '**/*.eot',
-                        // '**/*.woff',
-                        // '**/*.woff2',
-                        // '**/*.ttf',
-                        // '**/*.svg',
-                        //
-                        'bootstrap/js/affix.js',
-                        'bootstrap/js/alert.js',
-                        'bootstrap/js/button.js',
-                        'bootstrap/js/carousel.js',
-                        'bootstrap/js/collapse.js',
-                        'bootstrap/js/dropdown.js',
-                        'bootstrap/js/modal.js',
-                        'bootstrap/js/popover.js',
-                        'bootstrap/js/scrollspy.js',
-                        'bootstrap/js/tab.js',
-                        'bootstrap/js/tooltip.js',
-                        'bootstrap/js/transition.js',
-                        'fuelux/js/radio.js',
-                        'fuelux/js/checkbox.js',
-                        'fuelux/js/selectlist.js',
-                        'fuelux/js/datepicker.js',
-                        'fuelux/js/infinite-scroll.js',
-                    ],
-                    dest: destRoot + path + 'plugins/'
                 }]
             }
         },
@@ -216,7 +176,7 @@ module.exports = function(grunt) {
                 tasks: ['newer:imagemin']
             },
             livereload: {
-                files: ['**/*.min.js', '!**/_*', 'css/*.css','fonts/webfonts/*','js/*.js', 'plugins/**/*'],
+                files: [srcRoot + '**/*','!'+srcRoot+path+'**/*.less','!'+srcRoot+'*.jade'],
                 tasks: ['newer:copy']
             }
         },
@@ -225,12 +185,12 @@ module.exports = function(grunt) {
         // ===================================
         sprite: {
             main: {
-                src: srcRoot + path + 'ico/*.png',
-                dest: srcRoot + path + 'img/ico.png',
+                src: srcRoot + path + 'ico/folderName/*.png',
+                dest: srcRoot + path + 'img/folderName.png',
                 imgPath: path + 'img/',
                 // algorithm: 'top-down',
                 cssFormat: 'css',
-                destCss: srcRoot + path + 'ico/sprite.css'
+                destCss: srcRoot + path + 'ico/folderName/sprite.css'
             }
         },
         // brew install batik fontforge ttfautohint ttf2eot
@@ -240,7 +200,7 @@ module.exports = function(grunt) {
                     path_prefix: '../fonts/webfonts/',
                 },
                 files: [{
-                    src: srcRoot + path + 'fonts/*.ttf',
+                    src: srcRoot + path + 'fonts/*.{ttf, otf}',
                     dest: srcRoot + path + 'fonts/webfonts'
                 }]
             }
@@ -279,24 +239,6 @@ module.exports = function(grunt) {
                 dest: destRoot
             }
         },
-        shell: {
-            bower: {
-                command: 'bower i'
-            },
-            imagemin: {
-                command: 'npm i grunt-contrib-imagemin'
-            },
-            removegit: {
-                command: 'sudo rm -r .git/'
-            },
-            compile: {
-                command: 'grunt prod'
-            },
-            commit: {
-                command: 'git add . && git commit -m "first commit"'
-            }
-        }
-
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -312,14 +254,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-newer');
-    grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-prettify');
     grunt.loadNpmTasks('grunt-fontgen');
     grunt.loadNpmTasks('grunt-spritesmith');
 
-    grunt.registerTask('default', ['connect','watch']);
-    grunt.registerTask('prod', ['clean', 'coffee', 'uglify', 'copy', 'less', 'autoprefixer', 'cssmin', 'jade', 'prettify','imagemin']);
+    grunt.registerTask('default', ['build', 'connect', 'watch']);
+    grunt.registerTask('build', ['clean', 'coffee', 'uglify', 'copy', 'less', 'autoprefixer', 'cssmin', 'jade', 'prettify', 'imagemin']);
     grunt.registerTask('fonts', ['fontgen','concat']);
-    grunt.registerTask('install', ['shell']);
 
 };
