@@ -70,10 +70,39 @@ footer {
 	font-size: 15px;
 }
 .sign {
+	float: left;
 	margin-top: 28px;
 	margin-left: 15px;
 }
 
+.socials {
+	float: right;
+	height: 100%;
+	margin-right: 15px;
+	line-height: 100px;
+}
+.social-icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 28px;
+	height: 28px;
+	background: #333;
+	.bdrs(4px);
+	margin-left: 8px;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	line-height: 28px;
+	transition: background .175s;
+	&:hover, &:focus {
+		color: #fff;
+		background: #555;
+	}
+	&_vk {
+		font-size: 18px;
+		line-height: 26px;
+	}
+}
 // ======================
 // ?footer end
 // ======================
@@ -142,6 +171,9 @@ footer {
 		top: 10px;
 		color: #dedede;
 		font-size: 20px;
+		i {
+			vertical-align: top;
+		}
 	}
 }
 
@@ -218,5 +250,6 @@ footer {
 .no-svg .arrow-l {
 	background-image: url(../img/arrow-l.png);
 }
+
 //==================================
 @import url('../_less/helper.less');
