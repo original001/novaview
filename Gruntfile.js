@@ -1,5 +1,5 @@
 var srcRoot = 'public/',
-    destRoot = 'www/',
+    destRoot = '',
     path = 'assets/';
 module.exports = function(grunt) {
     grunt.initConfig({
