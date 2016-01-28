@@ -250,6 +250,10 @@
   background: #CE4C4C;
   color: #FFFFFF;
   text-align: center;
+  transition: background .5s;
+}
+.error-notify.highlight {
+  background: #de8888;
 }
 .error-notify__wrapper {
   position: fixed;
@@ -291,6 +295,17 @@
   width: 100%;
   vertical-align: middle;
   line-height: 1.42;
+}
+@-webkit-keyframes highlight {
+  0% {
+    background: #CE4C4C;
+  }
+  50% {
+    background: #e49c9c;
+  }
+  100% {
+    background: #CE4C4C;
+  }
 }
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 * {

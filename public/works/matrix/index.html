@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=1024"/>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024" />
     <title>Main page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="assets/app.css"/>
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/app.css" />
+</head>
+
+<body>
     <!--[if lt IE 8]>
     <p class="browsehappy">Вы используете <strong>устаревшую</strong> версию браузера. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a> до последней версии.</p>
     <![endif]-->
-    <div class="page">
-      <div class="sidebar">
+    <div class="sidebar">
         <ul class="sidebar__ul">
-          <li class="sidebar__li">Калькулятор</li>
-          <li class="sidebar__li">Матрицы</li>
-          <li class="sidebar__li">Линуры</li>
+            <li class="sidebar__li"><a href="#" class="sidebar__a">Calculator </a></li>
+            <li class="sidebar__li"><a href="#" class="sidebar__a">Matrixes</a></li>
         </ul>
         <ul class="sidebar__ul">
-          <li class="sidebar__li">Оставить отзыв</li>
+            <li class="sidebar__li"><a href="#" class="sidebar__a">Write a comment</a></li>
         </ul>
-      </div>
-      <div class="content">
-        <h2>Матрицы</h2>
-        <button id="getResult" class="button">Посчитать</button>
-        <div id="calcField" class="calc-field">
-        </div>
+    </div>
+    <div class="content">
+        <h2>Matrixes (in developing) v0.0.1</h2>
+        <button id="getResult" class="button">Run</button>
+        <div id="calcField" class="calc-field"></div>
         <div class="calc-field">
-          <div id="addButton" class="button-add"><i class="fa fa-plus-circle"></i></div>
+            <div id="addButton" class="button-add"><i class="fa fa-plus-circle"></i></div>
         </div>
         <div id="resultField" class="result-field"></div>
-      </div>
-      <div class="footer-shiv"></div>
     </div>
-    <!-- FOOTER BEGIN-->
-    <footer>
-      <div class="main"></div>
-    </footer>
-    <!-- FOOTER END-->
     <script type="text/javascript" src="assets/app.js"></script>
-  </body>
+</body>
+
 </html>
